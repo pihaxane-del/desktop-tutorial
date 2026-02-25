@@ -6,147 +6,12 @@
     <title>변호사 김철홍 법률사무소</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 
+    <!-- 앵커 스크롤 보정 -->
     <style>
-        body {
-            margin: 0;
-            font-family: 'Noto Sans KR', sans-serif;
-            color: #111;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: #fff;
-            border-bottom: 1px solid #eee;
-            z-index: 100;
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-
-        .logo a {
-            text-decoration: none;
-            color: #111;
-            font-weight: 700;
-        }
-
-        nav ul {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            align-items: center;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #111;
-            font-weight: 500;
-        }
-
-        .nav-btn {
-            background: #0a2a66;
-            color: #fff;
-            padding: 10px 14px;
-            border-radius: 4px;
-            font-size: 14px;
-            text-align: center;
-        }
-
         section {
-            padding: 120px 0;
-            scroll-margin-top: 100px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h3 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .section-title .bar {
-            width: 40px;
-            height: 3px;
-            background: #0a2a66;
-            margin: 0 auto;
-        }
-
-        /* ===== 오시는 길 ===== */
-
-        .location-content {
-            display: flex;
-            gap: 60px;
-            align-items: flex-start;
-        }
-
-        .location-info {
-            flex: 1;
-        }
-
-        .info-item {
-            margin-bottom: 24px;
-        }
-
-        .info-item label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .info-item p {
-            margin: 0;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        /* 🔵 지하철 푸른 박스 */
-        .info-item.subway {
-            background: #e8f0ff;
-            border-left: 5px solid #1f4fd8;
-            padding: 14px 18px;
-            border-radius: 4px;
-            font-weight: 500;
-            color: #0a2a66;
-        }
-
-        .map-box {
-            flex: 1;
-        }
-
-        /* 모바일 */
-        @media (max-width: 900px) {
-            .location-content {
-                flex-direction: column;
-            }
-
-            .map-box {
-                margin-top: 30px;
-            }
-        }
-
-        footer {
-            background: #111;
-            color: #bbb;
-            padding: 40px 0;
-            text-align: center;
-            font-size: 14px;
+            scroll-margin-top: 100px; /* 헤더 높이 */
         }
     </style>
 </head>
@@ -170,60 +35,261 @@
     </div>
 </header>
 
+<!-- 소개 (최상단 앵커) -->
 <section id="about"></section>
 
-<section id="location">
+<section id="hero">
     <div class="container">
+        <div class="hero-text">
+            <p class="top-tag">TRUST & SOLUTION</p>
+            <h2>
+                의뢰인의 권익 보호를 위해<br>
+                <span>최선의 결과</span>를 약속합니다.
+            </h2>
+            <p class="sub-text">
+                김철홍 법률사무소는 정직과 신뢰를 바탕으로
+                실질적인 법률 솔루션을 제공합니다.
+            </p>
+            <a href="#contact" class="main-btn">온라인 상담신청</a>
+        </div>
+    </div>
+</section>
 
+<section id="services">
+    <div class="container">
         <div class="section-title">
-            <h3>오시는 길</h3>
+            <h3>주요 업무분야</h3>
             <div class="bar"></div>
         </div>
 
+        <div class="service-grid">
+            <div class="service-card">
+                <h4>민사 소송</h4>
+                <p>손해배상, 부동산, 채권채무 등 일상 속 법률 분쟁 해결</p>
+            </div>
+            <div class="service-card">
+                <h4>형사 변호</h4>
+                <p>수사 단계부터 재판까지 피의자의 권리를 철저히 보호</p>
+            </div>
+            <div class="service-card">
+                <h4>가사/상속</h4>
+                <p>이혼, 재산분할, 상속 등 가족 간의 복잡한 문제 정리</p>
+            </div>
+            <div class="service-card">
+                <h4>기업 법무</h4>
+                <p>계약 검토, 자문, 소송 대리 등 기업 운영에 필요한 법률 서비스 제공</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="location">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h3>오시는 길</h3>
+
+            <div class="bar"></div>
+
+        </div>
+
+
+
         <div class="location-content">
 
-            <!-- 좌측 정보 -->
             <div class="location-info">
 
                 <div class="info-item">
+
                     <label>주소</label>
+
                     <p>대구광역시 수성구 동대구로 348-13 청담빌딩 401호</p>
-                </div>
 
-                <div class="info-item subway">
-                    지하철 2호선 범어역 10번 출구 (도보 5분)
                 </div>
 
                 <div class="info-item">
+
                     <label>대표전화</label>
+
                     <p>053-754-2580</p>
+
                 </div>
 
                 <div class="info-item">
+
                     <label>팩스번호</label>
+
                     <p>053-754-2582</p>
+
                 </div>
 
             </div>
 
-            <!-- 우측 지도 -->
-            <div class="map-box">
-                <a href="https://map.kakao.com/?from=roughmap&itemId=26076806" target="_blank">
-                    <img
-                        src="https://t1.daumcdn.net/roughmap/imgmap/0866fce1e1ec57cdb05e635df970189ee9940c73e0e66d0bf0f72d271ea7b7af"
-                        style="width:100%; border:1px solid #ccc;"
-                        alt="변호사 김철홍 법률사무소 위치 지도">
-                </a>
-            </div>
 
+
+<div class="map-box" style="max-width:100%;">
+
+
+
+  <div style="
+
+      font: normal normal 400 12px/normal dotum, sans-serif;
+
+      width: 100%;
+
+      max-width: 640px;
+
+      height: 392px;
+
+      color: #333;
+
+      position: relative;
+
+      margin: 0 auto;
+
+  ">
+
+
+
+    <div style="height:360px;">
+
+      <a href="https://map.kakao.com/?urlX=867764.0000000625&urlY=659792.9999999981&itemId=26076806&q=%EB%B3%80%ED%98%B8%EC%82%AC%EA%B9%80%EC%B2%A0%ED%99%8D%EB%B2%95%EB%A5%A0%EC%82%AC%EB%AC%B4%EC%86%8C&srcid=26076806&map_type=TYPE_MAP&from=roughmap"
+
+         target="_blank">
+
+
+
+        <img
+
+          src="https://t1.daumcdn.net/roughmap/imgmap/0866fce1e1ec57cdb05e635df970189ee9940c73e0e66d0bf0f72d271ea7b7af"
+
+          style="width:100%; height:360px; border:1px solid #ccc;"
+
+          alt="변호사 김철홍 법률사무소 위치 지도">
+
+      </a>
+
+    </div>
+
+
+
+    <div style="
+
+        overflow:hidden;
+
+        padding:7px 11px;
+
+        border:1px solid rgba(0,0,0,0.1);
+
+        background:#f9f9f9;
+
+        font-size:11px;
+
+    ">
+
+      <a href="https://map.kakao.com" target="_blank" style="float:left;">
+
+        <img src="https://t1.daumcdn.net/localimg/localimages/07/2018/pc/common/logo_kakaomap.png"
+
+             width="72" height="16" alt="카카오맵">
+
+      </a>
+
+
+
+      <div style="float:right;">
+
+        <a target="_blank"
+
+           href="https://map.kakao.com/?from=roughmap&srcid=26076806&rv=on"
+
+           style="margin-right:8px; color:#000; text-decoration:none;">로드뷰</a>
+
+        |
+
+        <a target="_blank"
+
+           href="https://map.kakao.com/?from=roughmap&eX=867764.0000000625&eY=659792.9999999981"
+
+           style="margin:0 8px; color:#000; text-decoration:none;">길찾기</a>
+
+        |
+
+        <a target="_blank"
+
+           href="https://map.kakao.com/?map_type=TYPE_MAP&from=roughmap&itemId=26076806"
+
+           style="margin-left:8px; color:#000; text-decoration:none;">지도 크게 보기</a>
+
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+
+
+</div>
+
+</section> 
+
+<section id="contact" style="padding: 100px 0; background-color: #f8f9fa;">
+    <div class="container">
+        <div class="section-title">
+            <h3>온라인 상담신청</h3>
+            <div class="bar"></div>
+        </div>
+
+        <div class="inquiry-box"
+             style="max-width: 800px; margin: 0 auto; background: #fff; padding: 40px; border: 1px solid #eee;">
+
+            <form action="https://formspree.io/f/mzdayjey" method="POST">
+
+                <div class="form-row" style="display:flex; gap:20px; margin-bottom:20px;">
+                    <input type="text" name="이름" placeholder="성함" required
+                           style="flex:1; padding:12px; border:1px solid #ddd;">
+                    <input type="tel" name="연락처" placeholder="연락처" required
+                           style="flex:1; padding:12px; border:1px solid #ddd;">
+                </div>
+
+                <div class="form-row" style="margin-bottom:20px;">
+                    <select name="분야" style="width:100%; padding:12px; border:1px solid #ddd;">
+                        <option value="">상담 분야 선택</option>
+                        <option value="민사">민사 소송</option>
+                        <option value="형사">형사 변호</option>
+                        <option value="가사">가사/상속</option>
+                        <option value="기업">기업 법무</option>
+                    </select>
+                </div>
+
+                <textarea name="상담내용" rows="5"
+                          placeholder="내용을 입력해주세요."
+                          style="width:100%; padding:12px; border:1px solid #ddd; margin-bottom:20px;"></textarea>
+
+                <div class="privacy-check" style="margin-bottom:20px; font-size:14px;">
+                    <input type="checkbox" id="privacy" required>
+                    <label for="privacy"> 개인정보처리방침에 동의합니다.</label>
+                </div>
+
+                <button type="submit" class="main-btn"
+                        style="width:100%; border:none; cursor:pointer;">
+                    상담 신청하기
+                </button>
+            </form>
         </div>
     </div>
 </section>
 
 <footer>
     <div class="container">
-        <p>변호사 김철홍 법률사무소 | 대표 : 김철홍 | 사업자번호 : 502-28-73546</p>
-        <p>COPYRIGHT © KIM CHUL HONG. ALL RIGHTS RESERVED.</p>
+        <div class="footer-top">
+            <p>변호사 김철홍 법률사무소 | 대표 : 김철홍 | 사업자번호 : 502-28-73546</p>
+        </div>
+        <p class="copy">COPYRIGHT © KIM CHUL HONG. ALL RIGHTS RESERVED.</p>
     </div>
 </footer>
 
