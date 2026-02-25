@@ -62,18 +62,19 @@
             </div>
         </div>
     </section>
-
-    <section id="inquiry-form-section">
-        <div class="container">
-            <div class="inquiry-box">
-                <h3 class="form-title">온라인 상담신청</h3>
-                <form action="https://formspree.io/f/mzdayjey" method="POST">
-                    <div class="form-row">
-                        <input type="text" name="이름" placeholder="이름" required>
-                        <input type="tel" name="연락처" placeholder="휴대폰 번호" required>
-                    </div>
-                    <div class="form-row">
-                        <input type="email" name="이메일" placeholder="이메일">
+<section id="inquiry-form-section">
+    <div class="container">
+        <div class="inquiry-box">
+            <h3 class="form-title">온라인 상담신청</h3>
+            
+            <form action="https://formspree.io/f/mzdayjey" method="POST">
+                <div class="form-row">
+                    <input type="text" name="이름" placeholder="이름" required>
+                    <input type="tel" name="연락처" placeholder="휴대폰 번호" required>
+                </div>
+                <div class="form-row">
+                    <input type="email" name="이메일" placeholder="이메일">
+                    <div class="select-wrapper">
                         <select name="분야">
                             <option value="">사건분야</option>
                             <option value="민사">민사</option>
@@ -81,18 +82,19 @@
                             <option value="가사">가사/상속</option>
                         </select>
                     </div>
-                    <textarea name="상담내용" placeholder="문의내용을 입력해주세요." rows="6"></textarea>
-                    
-                    <div class="privacy-check">
-                        <input type="checkbox" id="privacy" required>
-                        <label for="privacy">개인정보처리방침에 동의합니다.</label>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">상담 신청하기</button>
-                </form>
-            </div>
+                </div>
+                <textarea name="상담내용" placeholder="문의내용을 입력해주세요." rows="8"></textarea>
+                
+                <div class="privacy-check">
+                    <input type="checkbox" id="privacy" required>
+                    <label for="privacy">개인정보처리방침에 동의합니다.</label>
+                </div>
+                
+                <button type="submit" class="submit-btn">실시간 상담 신청하기</button>
+            </form>
         </div>
-    </section>
+    </div>
+</section>
 
     <footer>
         <div class="container">
