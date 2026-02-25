@@ -79,7 +79,6 @@
 
             <div class="location-map">
                 <div id="daumRoughmapContainer1740457680000" class="root_daum_roughmap root_daum_roughmap_landing" style="width:100%;"></div>
-                
                 <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
                 <script charset="UTF-8">
                     new daum.roughmap.Lander({
@@ -91,28 +90,3 @@
             </div>
         </div>
     </section>
-
-    <section id="inquiry-form-section">
-        <div class="container">
-            <div class="inquiry-box">
-                <h3 class="form-title">온라인 상담신청</h3>
-                <form action="https://formspree.io/f/mzdayjey" method="POST">
-                    <div class="form-row">
-                        <input type="text" name="이름" placeholder="이름" required>
-                        <input type="tel" name="연락처" placeholder="휴대폰 번호" required>
-                    </div>
-                    <div class="form-row">
-                        <input type="email" name="이메일" placeholder="이메일">
-                        <div class="select-wrapper">
-                            <select name="분야">
-                                <option value="">사건분야</option>
-                                <option value="민사">민사</option>
-                                <option value="형사">형사</option>
-                                <option value="가사">가사/상속</option>
-                            </select>
-                        </div>
-                    </div>
-                    <textarea name="상담내용" placeholder="문의내용을 입력해주세요." rows="8"></textarea>
-                    
-                    <div class="privacy-check">
-                        <input type="checkbox" id="privacy" required>
