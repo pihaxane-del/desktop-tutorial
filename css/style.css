@@ -453,3 +453,69 @@ textarea {
         gap: 15px;
     }
 }
+/* 오시는 길 섹션 전체 */
+#location {
+    padding: 100px 0;
+    background-color: #1a222c; /* 다크 네이비 배경 */
+    color: #fff;
+}
+
+.location-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px; /* 좌우 간격 */
+}
+
+/* 왼쪽 텍스트 정보 */
+.location-info {
+    flex: 1;
+}
+
+.location-info .sub-title {
+    color: #f1c40f; /* 노란색 포인트 */
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.location-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.office-details h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.office-details p {
+    color: #ccc;
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+
+/* 오른쪽 지도 디자인 */
+.location-map {
+    flex: 1.5;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.location-map iframe {
+    display: block;
+    border-radius: 4px;
+    /* 지도를 약간 어둡게 처리하여 사이트 톤과 맞춤 (선택사항) */
+    filter: contrast(0.9) brightness(0.9);
+}
+
+/* 모바일 화면 대응 */
+@media (max-width: 992px) {
+    .location-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .location-map {
+        width: 100%;
+    }
+}
