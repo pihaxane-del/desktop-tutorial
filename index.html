@@ -6,7 +6,6 @@
     <title>법률사무소 율언</title>
 
     <link rel="icon" href="https://i.imgur.com/eaTOyrT.png" type="image/png">
-
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <style>
@@ -38,7 +37,7 @@
             width: 100%;
         }
 
-        /* 로고 영역 수정 */
+        /* 로고 영역 정렬 수정 */
         .logo a {
             display: flex;
             align-items: center;
@@ -46,7 +45,7 @@
         }
 
         .logo-img {
-            height: 65px; /* 새로운 로고 형태에 맞춰 크기 조정 */
+            height: 60px;
             width: auto;
             display: block;
         }
@@ -54,40 +53,37 @@
         .logo-text-group {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
         }
 
         .logo-text {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 700;
             color: #1a1a1a;
-            letter-spacing: -0.5px;
             white-space: nowrap;
         }
 
         .lawyer-name {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 500;
             color: #003366;
             white-space: nowrap;
         }
 
         /* 네비게이션 */
-        nav ul { display: flex; align-items: center; gap: 30px; }
-        nav ul li a { font-size: 16px; font-weight: 500; color: #444; transition: 0.3s; }
+        nav ul { display: flex; align-items: center; gap: 25px; }
+        nav ul li a { font-size: 15px; font-weight: 500; color: #444; transition: 0.3s; }
         nav ul li a:hover { color: #003366; }
 
         .nav-btn {
             background: #003366;
             color: #fff !important;
-            padding: 10px 18px;
+            padding: 8px 15px;
             border-radius: 4px;
-            line-height: 1.3;
             text-align: center;
-            font-size: 13px !important;
+            font-size: 12px !important;
             display: inline-block;
-            white-space: nowrap;
-            min-width: 120px;
+            min-width: 110px;
         }
 
         /* 섹션 공통 */
@@ -98,8 +94,8 @@
 
         /* 히어로 섹션 */
         #hero {
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -108,40 +104,73 @@
             margin-top: 90px;
         }
         .hero-text .top-tag { color: #cbb279; font-weight: 700; margin-bottom: 10px; }
-        .hero-text h2 { font-size: 48px; line-height: 1.3; margin-bottom: 20px; }
+        .hero-text h2 { font-size: 42px; line-height: 1.3; margin-bottom: 20px; }
         .hero-text h2 span { color: #cbb279; }
-        .hero-text .sub-text { font-size: 18px; margin-bottom: 30px; opacity: 0.9; }
-        .main-btn { 
-            display: inline-block; background: #cbb279; color: #fff; padding: 15px 40px; 
-            font-weight: 600; border-radius: 5px; transition: 0.3s; 
+        .main-btn { display: inline-block; background: #cbb279; color: #fff; padding: 15px 40px; font-weight: 600; border-radius: 5px; }
+
+        /* 구성원 소개 병렬 배치 스타일 */
+        .lawyer-group {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            align-items: flex-start;
         }
 
+        .lawyer-profile {
+            flex: 1;
+            background: #fff;
+            padding: 30px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .lawyer-profile:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .lawyer-img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .lawyer-info h4 { font-size: 22px; color: #003366; margin-bottom: 10px; }
+        .lawyer-info p { color: #666; margin-bottom: 15px; }
+        .history { text-align: left; display: inline-block; }
+        .history li { font-size: 14px; margin-bottom: 5px; position: relative; padding-left: 15px; }
+        .history li::before { content: "•"; position: absolute; left: 0; color: #cbb279; }
+
         /* 업무분야 그리드 */
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .service-card { background: #f9f9f9; padding: 40px 30px; border: 1px solid #eee; transition: 0.3s; }
-        .service-card:hover { transform: translateY(-10px); background: #fff; border-color: #cbb279; }
-        .service-card h4 { font-size: 20px; margin-bottom: 15px; color: #003366; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+        .service-card { background: #f9f9f9; padding: 30px; border: 1px solid #eee; transition: 0.3s; }
+        .service-card:hover { transform: translateY(-5px); background: #fff; border-color: #cbb279; }
+
+        /* 블로그 그리드 */
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .blog-card { border: 1px solid #eee; overflow: hidden; background: #fff; transition: 0.3s; }
+        .blog-thumb { width: 100%; height: 200px; object-fit: cover; }
+        .blog-content { padding: 20px; }
 
         /* 오시는 길 */
-        .location-content { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; }
-        .info-item { margin-bottom: 25px; }
-        .info-item label { display: block; font-weight: 700; color: #003366; margin-bottom: 5px; }
-        .subway-badge { display: inline-block; background: #003366; color: #fff; padding: 6px 14px; border-radius: 20px; font-size: 14px; }
+        .location-content { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .map-box img { width: 100%; height: 360px; border: 1px solid #ccc; object-fit: cover; }
 
         /* 푸터 */
-        footer { background: #222; color: #fff; padding: 50px 0; text-align: center; }
-        .office-footer-info { margin-bottom: 20px; opacity: 0.8; font-size: 14px; }
-        .copy { font-size: 13px; opacity: 0.5; }
+        footer { background: #222; color: #fff; padding: 50px 0; text-align: center; font-size: 14px; }
+        .copy { opacity: 0.5; margin-top: 10px; }
 
         /* 반응형 */
         @media (max-width: 768px) {
             header { height: 70px; }
-            .logo-img { height: 45px; }
-            .logo-text { font-size: 18px; }
-            .lawyer-name { font-size: 14px; }
-            .logo-text-group { gap: 10px; }
+            .logo-img { height: 40px; }
+            .logo-text { font-size: 16px; }
+            .lawyer-name { display: none; }
             nav { display: none; }
-            .hero-text h2 { font-size: 32px; }
+            .lawyer-group { flex-direction: column; align-items: center; }
             .location-content { grid-template-columns: 1fr; }
         }
     </style>
@@ -161,14 +190,11 @@
         </h1>
         <nav>
             <ul>
-                <li><a href="#about">소개</a></li>
+                <li><a href="#introduction">소개</a></li>
                 <li><a href="#services">업무분야</a></li>
+                <li><a href="#blog">블로그</a></li>
                 <li><a href="#location">오시는 길</a></li>
-                <li>
-                    <a href="tel:053-754-2580" class="nav-btn">
-                        대표번호<br>053-754-2580
-                    </a>
-                </li>
+                <li><a href="tel:053-754-2580" class="nav-btn">상담예약<br>053-754-2580</a></li>
             </ul>
         </nav>
     </div>
@@ -178,20 +204,49 @@
     <div class="container">
         <div class="hero-text">
             <p class="top-tag">TRUST & SOLUTION</p>
-            <h2>
-                의뢰인의 권익 보호를 위해<br>
-                <span>최선의 결과</span>를 약속합니다.
-            </h2>
-            <p class="sub-text">
-                법률사무소 율언(律言)은 정직과 신뢰를 바탕으로<br>
-                실질적인 법률 솔루션을 제공합니다.
-            </p>
+            <h2>의뢰인의 권익 보호를 위해<br><span>최선의 결과</span>를 약속합니다.</h2>
+            <p>법률사무소 율언(律言)은 정직과 신뢰를 바탕으로 실질적인 솔루션을 제공합니다.</p><br>
             <a href="#contact" class="main-btn">상담예약 신청</a>
         </div>
     </div>
 </section>
 
-<section id="services">
+<section id="introduction">
+    <div class="container">
+        <div class="section-title">
+            <h3>구성원 소개</h3>
+            <div class="bar"></div>
+        </div>
+        <div class="lawyer-group">
+            <div class="lawyer-profile">
+                <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=500&q=80" alt="변호사 김철홍" class="lawyer-img">
+                <div class="lawyer-info">
+                    <h4>대표변호사 김철홍</h4>
+                    <p>전문적인 법률 지식으로 의뢰인의 든든한 조력자가 되겠습니다.</p>
+                    <ul class="history">
+                        <li>사법시험 합격 / 사법연수원 수료</li>
+                        <li>현) 법률사무소 율언 대표변호사</li>
+                        <li>전) OO지방법원 외부조정위원</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="lawyer-profile">
+                <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=500&q=80" alt="변호사 김태우" class="lawyer-img">
+                <div class="lawyer-info">
+                    <h4>대표변호사 김태우</h4>
+                    <p>정직과 신뢰를 원칙으로 최선의 결과를 이끌어내겠습니다.</p>
+                    <ul class="history">
+                        <li>사법시험 합격 / 사법연수원 수료</li>
+                        <li>현) 법률사무소 율언 대표변호사</li>
+                        <li>전) OO검찰청 검사직무대리</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" style="background-color: #fcfcfc;">
     <div class="container">
         <div class="section-title">
             <h3>주요 업무분야</h3>
@@ -212,46 +267,13 @@
             </div>
             <div class="service-card">
                 <h4>기업 법무</h4>
-                <p>계약 검토, 자문, 소송 대리 등 기업 운영에 필요한 법률 서비스 제공</p>
+                <p>계약 검토, 자문, 소송 대리 등 기업 운영 법률 서비스</p>
             </div>
         </div>
     </div>
 </section>
 
-<section id="introduction">
-    <div class="container">
-        <div class="section-title">
-            <h3>구성원 소개</h3>
-            <div class="bar"></div>
-        </div>
-        <div class="lawyer-profile">
-            <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=500&q=80" alt="변호사" class="lawyer-img">
-            <div class="lawyer-info">
-                <h4>대표변호사 김철홍 </h4>
-                <p>설명.</p><br>
-                <ul class="history">
-                    <li>위원회 1</li>
-                    <li>위원회 2</li>
-                    <li>위원회 3</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-            <div class="lawyer-profile">
-            <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=500&q=80" alt="변호사" class="lawyer-img">
-            <div class="lawyer-info">
-                <h4>대표변호사 김철홍 </h4>
-                <p>설명.</p><br>
-                <ul class="history">
-                    <li>위원회 1</li>
-                    <li>위원회 2</li>
-                    <li>위원회 3</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="blog" style="background: #fcfcfc;">
+<section id="blog">
     <div class="container">
         <div class="section-title">
             <h3>법률 블로그</h3>
@@ -262,27 +284,26 @@
                 <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=500&q=60" class="blog-thumb">
                 <div class="blog-content">
                     <h4>부동산 임대차 분쟁 대응법</h4>
-                    <span class="blog-link">더 알아보기 →</span>
+                    <span style="color:#003366; font-size:14px; font-weight:700;">더 알아보기 →</span>
                 </div>
             </a>
             <a href="#" class="blog-card">
                 <img src="https://images.unsplash.com/photo-1450175946337-057163d3994c?auto=format&fit=crop&w=500&q=60" class="blog-thumb">
                 <div class="blog-content">
                     <h4>상속 재산 분할 가이드</h4>
-                    <span class="blog-link">더 알아보기 →</span>
+                    <span style="color:#003366; font-size:14px; font-weight:700;">더 알아보기 →</span>
                 </div>
             </a>
             <a href="#" class="blog-card">
                 <img src="https://images.unsplash.com/photo-1423592707957-3b212afa6733?auto=format&fit=crop&w=500&q=60" class="blog-thumb">
                 <div class="blog-content">
                     <h4>형사 소송 초기 대응의 중요성</h4>
-                    <span class="blog-link">더 알아보기 →</span>
+                    <span style="color:#003366; font-size:14px; font-weight:700;">더 알아보기 →</span>
                 </div>
             </a>
         </div>
     </div>
 </section>
-
 
 <section id="location">
     <div class="container">
@@ -292,28 +313,22 @@
         </div>
         <div class="location-content">
             <div class="location-info">
-                <div class="info-item">
-                    <label>주소</label>
+                <div class="info-item" style="margin-bottom:20px;">
+                    <label style="font-weight:700; color:#003366;">주소</label>
                     <p>대구광역시 수성구 동대구로 348-13 청담빌딩 401호</p>
                 </div>
-                <div class="info-item">
-                    <div class="subway-badge">범어역 10번 출구 (도보 7분)</div>
+                <div class="info-item" style="margin-bottom:20px;">
+                    <span class="subway-badge" style="background:#003366; color:#fff; padding:5px 12px; border-radius:20px; font-size:13px;">범어역 10번 출구 (도보 7분)</span>
                 </div>
                 <div class="info-item">
-                    <label>대표전화</label>
-                    <p>053-754-2580</p>
-                </div>
-                <div class="info-item">
-                    <label>팩스번호</label>
-                    <p>053-754-2582</p>
+                    <label style="font-weight:700; color:#003366;">대표전화 / 팩스</label>
+                    <p>T. 053-754-2580 / F. 053-754-2582</p>
                 </div>
             </div>
             <div class="map-box">
-                <div style="height:360px;">
-                    <a href="https://map.kakao.com/?itemId=26076806" target="_blank">
-                        <img src="https://t1.daumcdn.net/roughmap/imgmap/0866fce1e1ec57cdb05e635df970189ee9940c73e0e66d0bf0f72d271ea7b7af" style="width:100%; height:360px; border:1px solid #ccc;" alt="지도">
-                    </a>
-                </div>
+                <a href="https://map.kakao.com/?itemId=26076806" target="_blank">
+                    <img src="https://t1.daumcdn.net/roughmap/imgmap/0866fce1e1ec57cdb05e635df970189ee9940c73e0e66d0bf0f72d271ea7b7af" alt="지도">
+                </a>
             </div>
         </div>
     </div>
