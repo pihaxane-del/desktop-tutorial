@@ -40,21 +40,34 @@
         .logo a {
             display: flex;
             align-items: center;
-            gap: 25px; /* 율언과 변호사 사이 간격을 더 넓힘 */
+            gap: 15px; /* 로고와 텍스트 사이 간격 */
         }
 
         .logo-img {
-            height: 55px;
+            height: 60px; /* 굵은 로고에 맞춰 크기 소폭 상향 */
             width: auto;
             display: block;
         }
 
+        .logo-text-group {
+            display: flex;
+            align-items: center;
+            gap: 25px; /* '법률사무소 율언'과 '변호사 성함' 사이 간격 */
+        }
+
         .logo-text {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 700;
-            color: #003366; /* 텍스트 색상을 남색으로 변경 */
+            color: #1a1a1a; /* 법률사무소 명칭은 강조를 위해 진한 검정 계열 */
             letter-spacing: -0.5px;
-            white-space: nowrap; /* 줄바꿈 방지 */
+            white-space: nowrap;
+        }
+
+        .lawyer-name {
+            font-size: 18px;
+            font-weight: 500;
+            color: #003366; /* 변호사 성함은 신뢰감 있는 남색 */
+            white-space: nowrap;
         }
 
         /* 네비게이션 */
@@ -71,8 +84,8 @@
             text-align: center;
             font-size: 13px !important;
             display: inline-block;
-            white-space: nowrap; /* 번호 깨짐 방지 */
-            min-width: 120px; /* 최소 너비 확보 */
+            white-space: nowrap;
+            min-width: 120px;
         }
 
         /* 섹션 공통 */
@@ -111,7 +124,7 @@
         .location-content { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; }
         .info-item { margin-bottom: 25px; }
         .info-item label { display: block; font-weight: 700; color: #003366; margin-bottom: 5px; }
-        .subway-badge { display: inline-block; background: #003366; color: #fff; padding: 6px 14px; border-radius: 20px; font-size: 14px; } /* 초록색에서 남색으로 변경 */
+        .subway-badge { display: inline-block; background: #003366; color: #fff; padding: 6px 14px; border-radius: 20px; font-size: 14px; }
 
         /* 푸터 */
         footer { background: #222; color: #fff; padding: 50px 0; text-align: center; }
@@ -121,9 +134,10 @@
         /* 반응형 */
         @media (max-width: 768px) {
             header { height: 70px; }
-            .logo-img { height: 40px; }
-            .logo-text { font-size: 15px; } /* 모바일에서 텍스트 크기 조절 */
-            .logo a { gap: 10px; }
+            .logo-img { height: 45px; }
+            .logo-text { font-size: 18px; }
+            .lawyer-name { font-size: 14px; }
+            .logo-text-group { gap: 10px; }
             nav { display: none; }
             .hero-text h2 { font-size: 32px; }
             .location-content { grid-template-columns: 1fr; }
@@ -136,8 +150,11 @@
     <div class="container">
         <h1 class="logo">
             <a href="#">
-                <img src="새 캔버스-Photoroom.png" alt="법률사무소 율언" class="logo-img">
-                <span class="logo-text">변호사 김철홍 · 변호사 김태우</span>
+                <img src="https://i.imgur.com/8mXQ8tU.png" alt="법률사무소 율언 로고" class="logo-img">
+                <div class="logo-text-group">
+                    <span class="logo-text">법률사무소 율언</span>
+                    <span class="lawyer-name">변호사 김철홍 · 변호사 김태우</span>
+                </div>
             </a>
         </h1>
         <nav>
