@@ -145,3 +145,22 @@ footer { background: #222; color: #888; padding: 60px 0; text-align: center; fon
         text-align: left;
     }
 }
+/* 화면 너비가 768px 이하일 때 적용 */
+@media screen and (max-width: 768px) {
+    /* 성함과 연락처를 감싸고 있는 부모 요소의 flex 해제 */
+    .form-group, .input-row { 
+        display: flex !important;
+        flex-direction: column !important; /* 가로가 아닌 세로로 배치 */
+    }
+
+    /* 성함, 연락처 등 모든 입력창의 너비를 100%로 변경 */
+    .form-group input, 
+    .form-group select,
+    .contact-form input[type="text"],
+    .contact-form input[type="tel"] {
+        width: 100% !important;
+        margin-bottom: 10px; /* 입력창 사이 간격 확보 */
+        margin-right: 0 !important; /* 옆에 있던 여백 제거 */
+        box-sizing: border-box; /* 패딩이 너비에 포함되게 설정 */
+    }
+}
