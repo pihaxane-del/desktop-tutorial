@@ -211,3 +211,60 @@ footer { background: #222; color: #888; padding: 60px 0; text-align: center; fon
     font-size: 14px;
     color: #666;
 }
+/* 변호사 소개 */
+.lawyer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.lawyer-card {
+    display: flex;
+    gap: 30px;
+    background: #f9f9f9;
+    padding: 30px;
+    border: 1px solid #eee;
+}
+
+.lawyer-photo img {
+    width: 220px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.lawyer-info {
+    flex: 1;
+}
+
+.lawyer-desc {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+.lawyer-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+    .lawyer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lawyer-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .lawyer-photo img {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+    }
+}
