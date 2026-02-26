@@ -164,30 +164,63 @@ footer { background: #222; color: #888; padding: 60px 0; text-align: center; fon
         box-sizing: border-box; /* 패딩이 너비에 포함되게 설정 */
     }
 }
+/* 전체 카드 컨테이너: 카드 두 개를 가로로 배치 */
 .lawyer-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    display: flex;
+    gap: 30px; /* 카드 사이 간격 */
+    justify-content: center;
+    flex-wrap: wrap; /* 화면이 좁아지면 아래로 떨어지게 */
 }
+
+/* 개별 카드 설정: 카드 내부에서 [사진 | 내용] 가로 배치 */
 .lawyer-card {
-    background: #fff;
+    flex: 1;
+    min-width: 450px; /* 카드의 최소 너비 */
+    background: #f8f9fa; /* 밝은 회색 배경 */
     padding: 30px;
-    border: 1px solid #eee;
-    text-align: center;
+    border-radius: 10px;
+    display: flex; /* 내부 요소 가로 배치 */
+    align-items: center;
+    gap: 25px; /* 사진과 텍스트 사이 간격 */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
+
+/* 카드 내 이미지 설정 */
 .lawyer-card img {
-    width: 100%;
-    height: 250px;
+    width: 180px; /* 사진 크기 조절 */
+    height: 240px;
     object-fit: cover;
-    margin-bottom: 20px;
+    border-radius: 8px;
+    background: #fff;
 }
-.lawyer-card p {
+
+/* 카드 내 텍스트 영역 설정 */
+.lawyer-info {
+    flex: 1;
     text-align: left;
-    font-size: 15px;
-    color: #666;
+}
+
+.lawyer-info strong {
+    display: block;
+    font-size: 22px;
+    color: #003366;
     margin-bottom: 15px;
 }
-.lawyer-card strong {
-    font-size: 20px;
-    color: #003366;
+
+.lawyer-info p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* 모바일 대응: 화면이 아주 좁아지면 사진과 글을 다시 세로로 */
+@media (max-width: 500px) {
+    .lawyer-card {
+        flex-direction: column;
+        min-width: 100%;
+        text-align: center;
+    }
+    .lawyer-info {
+        text-align: center;
+    }
 }
