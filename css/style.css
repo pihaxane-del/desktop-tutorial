@@ -253,3 +253,50 @@ footer { background: #222; color: #888; padding: 60px 0; text-align: center; fon
 .history li {
     margin-bottom: 6px;
 }
+/* ====== 소속 / 위원회 스타일 완성본 ====== */
+
+/* 전체 리스트 기본 정리 */
+.history {
+    margin-top: 15px;
+    padding-left: 0;
+}
+
+/* 일반 항목 */
+.history li {
+    list-style: none;
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 6px;
+    padding-left: 14px;
+    position: relative;
+}
+
+/* 일반 항목 점 */
+.history li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #cbb279;
+}
+
+/* 라벨 (소속 / 위원회) */
+.history-label {
+    margin: 18px 0 8px;
+    padding: 5px 14px;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #003366;
+    background: #eef3ff;
+    border-radius: 20px;
+}
+
+/* 라벨에는 점 제거 */
+.history-label::before {
+    content: none !important;
+}
+
+/* 라벨 다음 첫 항목 여백 */
+.history-label + li {
+    margin-top: 4px;
+}
