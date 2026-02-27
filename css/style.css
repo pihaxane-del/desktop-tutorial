@@ -250,3 +250,6 @@ footer { background: #222; color: #888; padding: 60px 0; text-align: center; fon
 .history-label::before {
     content: none !important;
 }
+.history li {
+    margin-bottom: 6px;
+}
