@@ -307,3 +307,89 @@ footer { background: #222; color: #888; padding: 60px 0; text-align: center; fon
         font-size: 13px; /* 모바일에서는 가독성을 위해 살짝 줄임 */
     }
 }
+/* 구성원 소개 상세 스타일링 */
+.lawyer-intro {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    word-break: keep-all;
+    padding: 10px 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+.history-wrapper {
+    text-align: left;
+}
+
+.history-group {
+    margin-bottom: 25px;
+}
+
+/* 고급스러운 라벨 디자인 */
+.history-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #003366;
+    background: #f0f4f8; /* 연한 블루 그레이 */
+    padding: 4px 12px;
+    border-radius: 2px;
+    margin-bottom: 12px;
+    border-left: 3px solid #cbb279; /* 골드 포인트 바 */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* 리스트 정렬 */
+.history {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.history li {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.8;
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 4px;
+}
+
+/* 세련된 불렛 포인트 (작은 사각형 혹은 도트) */
+.history li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 3px;
+    height: 3px;
+    background-color: #cbb279;
+    border-radius: 50%;
+}
+
+/* 위원회 목록이 많을 경우 2단으로 배열 (데스크탑 전용) */
+@media (min-width: 1024px) {
+    .committee-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 두 줄로 나눔 */
+        column-gap: 20px;
+    }
+}
+
+/* 강조 텍스트 */
+.history li strong {
+    color: #003366;
+    font-weight: 600;
+}
+
+/* 모바일 최적화 */
+@media (max-width: 768px) {
+    .committee-grid {
+        grid-template-columns: 1fr; /* 모바일은 다시 한 줄로 */
+    }
+    .history li {
+        font-size: 13.5px;
+    }
+}
