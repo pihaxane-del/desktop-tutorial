@@ -234,25 +234,6 @@ footer { background: #222; color: #888; padding: 60px 0; text-align: center; fon
     border-radius: 12px;
     margin: 14px 0 6px;
 }
-/* 소속 / 위원회 라벨 스타일 */
-.history-label {
-    display: inline-block;
-    font-size: 13px;
-    font-weight: 600;
-    color: #003366;
-    background: #eef2ff;
-    padding: 5px 12px;
-    border-radius: 14px;
-    margin: 14px 0 8px;
-}
-
-/* 라벨에는 점 제거 */
-.history-label::before {
-    content: none !important;
-}
-.history li {
-    margin-bottom: 6px;
-}
 /* ====== 소속 / 위원회 스타일 완성본 ====== */
 
 /* 전체 리스트 기본 정리 */
