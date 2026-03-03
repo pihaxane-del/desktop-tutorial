@@ -11,10 +11,24 @@
     <style>
         /* [1] 기본 설정 */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Noto Sans KR', sans-serif; line-height: 1.6; color: #333; background: #fff; }
+        body { font-family: 'Noto Sans KR', sans-serif; line-height: 1.6; color: #333; background: #fff; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; padding: 0; margin: 0; }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* [Reveal 애니메이션 CSS] */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.3s; }
+        .delay-3 { transition-delay: 0.5s; }
 
         /* [2] 헤더 스타일 */
         header {
@@ -76,10 +90,10 @@
         .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
         .service-card { background: #f9f9f9; padding: 30px; border: 1px solid #eee; transition: 0.3s; text-align: center; }
         .service-card h4 { color: #003366; margin-bottom: 10px; font-size: 20px; }
-        .service-card:hover { 
-            transform: translateY(-10px); 
-            background: #fff; 
-            border-color: #cbb279; 
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: #fff;
+            border-color: #cbb279;
             box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         }
 
@@ -94,8 +108,8 @@
         /* [9] 블로그 섹션 */
         #blog { background-color: #fff; }
         .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .blog-card { 
-            background: #fff; border: 1px solid #eee; border-radius: 12px; overflow: hidden; 
+        .blog-card {
+            background: #fff; border: 1px solid #eee; border-radius: 12px; overflow: hidden;
             transition: 0.4s ease; cursor: pointer;
         }
         .blog-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
@@ -113,33 +127,16 @@
         .blog-view-all { padding: 12px 35px; border: 1px solid #cbb279; color: #cbb279; border-radius: 30px; font-weight: 500; transition: 0.3s; }
         .blog-view-all:hover { background: #cbb279; color: #fff; }
 
-        /* =============================================
-           [10] 모바일 반응형 (기존 디자인 유지)
-        ============================================= */
-
-        /* 햄버거 메뉴 버튼 */
+        /* [10] 모바일 반응형 */
         .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 5px;
-            z-index: 1100;
+            display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; z-index: 1100;
         }
-        .hamburger span {
-            display: block;
-            width: 25px;
-            height: 2px;
-            background: #333;
-            transition: 0.3s;
-        }
+        .hamburger span { display: block; width: 25px; height: 2px; background: #333; transition: 0.3s; }
         .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
         .hamburger.active span:nth-child(2) { opacity: 0; }
         .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
         @media (max-width: 768px) {
-
-            /* 헤더 */
             header { height: 70px; padding: 0 15px; }
             header .container { padding: 0; }
             .logo a { gap: 8px; }
@@ -149,72 +146,37 @@
             .logo-text-group { display: flex; flex-direction: column; }
             .nav-btn { display: none; }
             nav.open .nav-btn { display: inline-block; }
-
-            /* 햄버거 표시 */
             .hamburger { display: flex; }
-
-            /* 네비게이션 모바일 드롭다운 */
             nav {
-                display: none;
-                position: fixed;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: #fff;
-                border-bottom: 1px solid #eee;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-                z-index: 999;
+                display: none; position: fixed; top: 70px; left: 0; width: 100%; background: #fff;
+                border-bottom: 1px solid #eee; box-shadow: 0 5px 15px rgba(0,0,0,0.08); z-index: 999;
             }
             nav.open { display: block; }
             nav ul { flex-direction: column; gap: 0; padding: 10px 0; }
             nav ul li { width: 100%; text-align: center; }
             nav ul li a { display: block; padding: 14px 20px; font-size: 16px; border-bottom: 1px solid #f5f5f5; }
-            .nav-btn {
-                margin: 10px auto;
-                display: inline-block;
-                min-width: auto;
-                padding: 10px 25px;
-                font-size: 14px !important;
-            }
-
-            /* 섹션 여백 */
+            .nav-btn { margin: 10px auto; display: inline-block; min-width: auto; padding: 10px 25px; font-size: 14px !important; }
             section { padding: 60px 0; scroll-margin-top: 70px; }
             .section-title h3 { font-size: 24px; }
-
-            /* 히어로 */
             #hero { height: auto; min-height: 60vh; margin-top: 70px; padding: 60px 0; }
             .hero-text h2 { font-size: 26px; word-break: keep-all; }
             .hero-text p { font-size: 14px; word-break: keep-all; }
             .main-btn { padding: 12px 30px; font-size: 15px; }
-
-            /* 구성원 소개 */
             .lawyer-group { flex-direction: column; align-items: center; }
             .lawyer-profile { width: 100%; padding: 30px 20px; }
             .lawyer-info h4 { font-size: 20px; }
-
-            /* 업무분야 */
             .service-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
             .service-card { padding: 20px 15px; }
             .service-card h4 { font-size: 16px; }
             .service-card p { font-size: 13px; }
-
-            /* 블로그 */
             .blog-grid { grid-template-columns: 1fr; gap: 20px; }
             .blog-content h4 { font-size: 16px; }
             .blog-btn-wrap { margin-top: 30px; }
-
-            /* 오시는 길 */
             .location-content { grid-template-columns: 1fr; gap: 25px; }
             .map-box img { height: 220px; }
-
-            /* 상담 예약 */
             .inquiry-box { padding: 25px 15px !important; }
-            .inquiry-box > form > div:first-child { flex-direction: column !important; gap: 12px !important; }
-
-            /* 푸터 */
             footer { padding: 35px 0; font-size: 13px; }
         }
-
         @media (max-width: 400px) {
             .service-grid { grid-template-columns: 1fr; }
             .hero-text h2 { font-size: 22px; }
@@ -234,7 +196,6 @@
                 </div>
             </a>
         </h1>
-        <!-- 햄버거 버튼 -->
         <div class="hamburger" id="hamburger" onclick="toggleNav()">
             <span></span><span></span><span></span>
         </div>
@@ -251,7 +212,7 @@
 
 <section id="hero">
     <div class="container">
-        <div class="hero-text">
+        <div class="hero-text reveal">
             <p class="top-tag">TRUST & SOLUTION</p>
             <h2>의뢰인의 권익 보호를 위해<br><span>최선의 결과</span>를 약속합니다.</h2>
             <p>법률사무소 율언(律言)은 정직과 신뢰를 바탕으로 실질적인 솔루션을 제공합니다.</p><br>
@@ -360,7 +321,7 @@
             <div class="bar"></div>
         </div>
         <div class="blog-grid">
-            <article class="blog-card" onclick="window.open('https://blog.naver.com/goodluck-withus/224069569461')">
+            <article class="blog-card reveal delay-1" onclick="window.open('https://blog.naver.com/goodluck-withus/224069569461')">
                 <div class="blog-img-box">
                     <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80" alt="지역주택조합"
                          onerror="this.src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80'">
@@ -371,7 +332,7 @@
                     <span class="blog-more">자세히 보기</span>
                 </div>
             </article>
-            <article class="blog-card" onclick="window.open('https://blog.naver.com/goodluck-withus/224063826574')">
+            <article class="blog-card reveal delay-2" onclick="window.open('https://blog.naver.com/goodluck-withus/224063826574')">
                 <div class="blog-img-box">
                     <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80" alt="보험약관">
                 </div>
@@ -381,7 +342,7 @@
                     <span class="blog-more">자세히 보기</span>
                 </div>
             </article>
-            <article class="blog-card" onclick="window.open('https://blog.naver.com/goodluck-withus/224063826094')">
+            <article class="blog-card reveal delay-3" onclick="window.open('https://blog.naver.com/goodluck-withus/224063826094')">
                 <div class="blog-img-box">
                     <img src="https://plus.unsplash.com/premium_photo-1733259707122-c8d827ce298f?q=80&w=1734&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="판사봉">
                 </div>
@@ -466,6 +427,7 @@
 </footer>
 
 <script>
+    // 네비게이션 토글 함수
     function toggleNav() {
         const nav = document.getElementById('main-nav');
         const hamburger = document.getElementById('hamburger');
@@ -476,7 +438,6 @@
         document.getElementById('main-nav').classList.remove('open');
         document.getElementById('hamburger').classList.remove('active');
     }
-    // 바깥 클릭시 닫기
     document.addEventListener('click', function(e) {
         const nav = document.getElementById('main-nav');
         const hamburger = document.getElementById('hamburger');
@@ -484,6 +445,24 @@
             nav.classList.remove('open');
             hamburger.classList.remove('active');
         }
+    });
+
+    // [Scroll Reveal 기능]
+    const revealCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    };
+
+    const revealObserver = new IntersectionObserver(revealCallback, {
+        threshold: 0.15
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const revealElements = document.querySelectorAll('.reveal');
+        revealElements.forEach(el => revealObserver.observe(el));
     });
 </script>
 
